@@ -1,3 +1,5 @@
-# Projetos Python
-## Algumas bobeirinhas que eu fiz no jupyter e algumas em py 
-### No intuito de aprender mais sobre certas bibliotecas etc
+# Projetos Básico em Python 
+
+Esse ReadMe são para em mostrar alguns projetos feitos em python no decorrer do meu aprendizado 
+
+
