@@ -1,5 +1,5 @@
 # Projetos Básico em Python 
 
-Esse ReadMe são para em mostrar alguns projetos feitos em python no decorrer do meu aprendizado 
+A ideia a principio é mostrar alguns projetos feitos em python no decorrer do meu aprendizado 
 
 
