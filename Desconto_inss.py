@@ -8,15 +8,14 @@ import sys
 
 class Desconto():
     
-    def __init__(self, nome):
+    def __init__(self, nome, salario):
         '''Um objeto da classe desconto com o atributo nome'''
         
         self.nome= nome
+        self.salario= salario
 
-    def calculo_INSS(self, salario):
+    def calculo_INSS(self):
         '''Função que calcula o valor de desconto do INSS de acordo com a tabela do inss dado o salario bruto;'''
-
-        self.salario = salario
 
         if  self.salario <= 1100:
                 
@@ -34,7 +33,7 @@ class Desconto():
                 
             print( "\nOlá Sr.{}, seu desconto do INSS é de R${} reais".format(self.nome,self.salario*0.14))
 
-    def calculo_IR(self, salario):
+    def calculo_IR(self):
         
          "funçao que calcula a taxa de desconto de IR de acordo com a tabela do INSS;"
 
@@ -59,33 +58,33 @@ class Desconto():
             if self.salario > 5300:
 
                 print("\nSua taxa de desconto de imposto de acordo com a tabela será de: R${} reais \n".format(self.salario*0.275))
-
-    def  resultado (self, valor):
+                
+    def  resultado (self):
 
         "função que retorna o valor do salario liquido com os descontos do IR e INSS;"
 
+        print("\nDado os descontos de INSS e IR, o seu salario liquido é de R${} reais".format((self.salario) - (calculo_INSS(self.salario)) + (calculo_IR(self.salario))))
 
-        print("\nDado os descontos de INSS e IR, o seu salario liquido é de R${} reais".format((self.salario) - (self.calculo_INSS(self.salario)) + (self.calculo_IR(self.salario))))
-
-
+                
 def main ():
+    
     print("==================================")
 
     print('__DESCONTO_DO_IMPOSTO_DE_RENDA __')
 
     print("==================================")
 
-    nome_cliente=input("\nOlá, Digite seu Nome:")
-    
-    n= Desconto(nome_cliente)
-    
+    nome_cliente = input("\nOlá, Digite seu Nome:")
+
     salario_cliente=int(input('\nDigite aqui o Salario:'))
     
-    n.calculo_INSS(salario_cliente)
+    calculo = Desconto(nome_cliente, salario_cliente)
 
-    n.calculo_IR(salario_cliente)
+    calculo.calculo_INSS()
 
-    print(n.resultado(salario_cliente))
+    calculo.calculo_IR()
+
+    print("\nDado os descontos de INSS e IR, o seu salario liquido é de R${} reais".format())
 
 
     while True:
@@ -99,15 +98,15 @@ def main ():
 
         if condição == 'y':
 
-            nome_cliente=input("\nDigite seu Nome:")
-                
-            n= Desconto(nome_cliente)
-                
-            salario_cliente=int(input('\nDigite aqui o Salario:'))
-                
-            n.calculo_INSS(salario_cliente)
+            nome_cliente = input("\nOlá, Digite seu Nome:")
 
-            n.calculo_IR(salario_cliente)
+            salario_cliente=int(input('\nDigite aqui o Salario:'))
+            
+            calculo = Desconto(nome_cliente, salario_cliente)
+            
+            print(calculo.calculo_INSS())
+
+            print(calculo.calculo_IR())
 
             continue
 
